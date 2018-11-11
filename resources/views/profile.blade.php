@@ -16,16 +16,9 @@
 
                     Users are listed below <br><br>
 
-                        @if (count($users) === 1)
-                            I have one record!
-                        @elseif (count($users) >= 10)
-                            I have at least 10 records!
-                        @else
-                            I don't have any records!
-                        @endif
-
-                        @foreach ($users as $user)
-                            <p>This is user {{ $user->name . ' ID: ' . $user->id }}</p>
+                        @foreach ($posts as $post)
+                            <h1>{{$post->title}}</h1>
+                            <p>{{$post->body}}</p>
                         @endforeach
                 </div>
             </div>

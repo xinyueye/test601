@@ -29,21 +29,16 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
     public function profile()
     {
         //$user = Auth::user();
-        //$user=User::find(3);
-        //$user->name='abc';
-        //$user->delete();
-        $users = User::all();
-        //$user->name='at up';
-        //$user->delete();
-        //$users = User::where('id', 1)
-          //  ->orderBy('name', 'desc')
-           // ->take(10)
-            //->get();
-        //dd($users->count());
+        //$posts = $user -> posts;
+        $user = User::find(20);
+        $posts = $user->posts;
+        //dd($posts);
+
         //dd($users);
-        return view('profile', ['users'=>$users]);
+        return view('profile', ['posts'=>$posts]);
     }
 }
